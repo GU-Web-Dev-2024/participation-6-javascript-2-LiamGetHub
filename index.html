@@ -64,6 +64,31 @@
         // executes the code in the body of the anonymous function
         document.getElementById('guess-button').addEventListener('click', function () {
             //function body -- any code here will be executed when the registered event is triggered.
+
+            //document.getElementById("guess-input").value=99;
+            int randNum = Math.random() % 10 + 1;
+            int numOfguess = 0;
+            int guess = document.getElementById("guess-input");
+            Boolean end = false;
+            do {
+                
+                if ( guess > randNum) {
+                document.getElementById("guess-input").value="too high";
+            } else if (guess < randNum){
+                    document.getElementById("guess-input").value = "too low"
+                    numOfguess++;
+                }
+                else if(guess<randNum){
+                    document.getElementById("guess-input").value = "too high"
+                    numOfguess++;
+                }
+                else {
+                    document.getElementById("guess-input").value = "Congrats, you guessed the number";
+                    end = true;
+                }
+            
+            } while (!end && numOfguess <= 3)
+
         });
 
     </script>
